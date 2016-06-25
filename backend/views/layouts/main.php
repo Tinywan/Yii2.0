@@ -41,7 +41,6 @@ AppAsset::register($this); //注册资源包
             <button type="submit" class="fa fa-search"></button>
             <input type="text" class="form-control" placeholder="Search..."></a>
         </form>
-        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费模板</a></div>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown visible-md visible-lg">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope-o"></i><span class="badge">5</span></a>
@@ -128,10 +127,11 @@ AppAsset::register($this); //注册资源包
                 </ul>
             </li>
             <li class="dropdown visible-md visible-lg">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-method="post">
-                    <img class="user-avatar" src="/statics/img/avatar.jpg" alt="user-mail">
-                    <?=Yii::$app->user->identity->username?>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-method="post">        
+<img class="user-avatar" src="<?=Url::to('@web/statics/img/avatar.jpg',true)?>" alt="user-mail">
+                        <?=Yii::$app->user->identity->username?>
                 </a>
+
                 <ul class="dropdown-menu">
                     <li class="dropdown-menu-header">
                         <strong>312321</strong>
@@ -161,36 +161,35 @@ AppAsset::register($this); //注册资源包
 
             <div class="sidebar-collapse">
                 <div class="sidebar-header t-center">
-                    <span><img class="text-logo" src="/statics/img/logo1.png"><i class="fa fa-space-shuttle fa-3x blue"></i></span>
+                    <span><img class="text-logo" src="<?=Url::to('@web/statics/img/logo1.png')?>"><i class="fa fa-space-shuttle fa-3x blue"></i></span>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="nav nav-sidebar">
-                        <li><a href="<?=Url::to(['site/index'])?>"><i class="fa fa-laptop"></i><span class="text"> 后台首页</span></a></li>
+                        <li><a href="<?=Url::to(['/site/index'])?>"><i class="fa fa-laptop"></i><span class="text"> 后台首页</span></a></li>
                         <li>
-
                             <a href="#"><i class="fa fa-file-text"></i><span class="text"> 单位管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
-                                <li><a href="<?=Url::to(['company/index'])?>"><i class="fa fa-car"></i><span class="text"> 单位管理</span></a>
+                                <li><a href="<?=Url::to(['/company/index'])?>"><i class="fa fa-car"></i><span class="text"> 单位管理</span></a>
 
                                 </li>
                                 <li><a href="page-inbox.html"><i class="fa fa-envelope"></i><span class="text"> 摄像头管理</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 用户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 文章管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
-                                <li><a href="form-elements.html"><i class="fa fa-indent"></i><span class="text"> 摄像头管理</span></a></li>
+                                <li><a href="<?=Url::to('@web/article/article/index')?>"><i class="fa fa-indent"></i><span class="text"> 文章管理</span></a></li>
                                 <li><a href="form-wizard.html"><i class="fa fa-tags"></i><span class="text"> 摄像头管理</span></a></li>
                                 <li><a href="form-dropzone.html"><i class="fa fa-plus-square-o"></i><span class="text"> 摄像头管理</span></a></li>
                                 <li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-摄像头管理</span></a></li>
                             </ul>
                         </li>
-                        <li><a href="table.html"><i class="fa fa-table"></i><span class="text"> 节点管理</span></a></li>
+                        <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-table"></i><span class="text">文件上传</span></a></li>
                         <li>
-                            <a href="#"><i class="fa fa-signal"></i><span class="text"> 节点管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-signal"></i><span class="text"> PhpExcel</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
-                                <li><a href="chart-flot.html"><i class="fa fa-random"></i><span class="text"> 节点管理</span></a></li>
-                                <li><a href="chart-xchart.html"><i class="fa fa-retweet"></i><span class="text"> 节点管理</span></a></li>
+                                <li><a href="<?=Url::to(['/php-excel/reader'])?>"><i class="fa fa-random"></i><span class="text"> 读取Excel</span></a></li>
+                                <li><a href="<?=Url::to(['/php-excel/export'])?>"><i class="fa fa-retweet"></i><span class="text"> Mysql写入Excel</span></a></li>
                                 <li><a href="chart-other.html"><i class="fa fa-bar-chart-o"></i><span class="text"> 节点管理</span></a></li>
                             </ul>
                         </li>
@@ -216,7 +215,7 @@ AppAsset::register($this); //注册资源包
                 </div>
 
                 <ul class="sidebar-terms">
-                    <li><a href="index.html#">Terms</a></li>
+                    <li><span style="cursor: pointer;" onclick="location.href='<?=Url::to(['site/language', 'lang' => 'zh-CN'])?>'">中文</span></li>
                     <li><a href="index.html#">Privacy</a></li>
                     <li><a href="index.html#">Help</a></li>
                     <li><a href="index.html#">About</a></li>

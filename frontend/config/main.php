@@ -12,10 +12,21 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    /*模块配置信息*/
+    'modules' => [
+        'user' => [
+            'class' => 'frontend\modules\user\Module',
+        ],
+        'articel' => [
+            'class' => 'frontend\modules\articel\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+//            'enableSession' => true,
+//            'loginUrl' => null,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -49,13 +60,14 @@ return [
             ],
         ],
         //URl
-//        'urlManager' => [
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false,
-//            'suffix' => '.html',
-//            'rules'=>[
-//            ],
-//        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'suffix' => '',    //如果设置了此项，那么浏览器地址栏就必须带上.html后缀，否则会报404错误
+            'rules'=>[
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'article'],
+            ],
+        ],
 
     ],
     'params' => $params,

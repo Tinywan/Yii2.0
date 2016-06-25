@@ -38,8 +38,24 @@ class Company extends BaseModel
             // ['phone','required','message'=>'电话号码不能为空'],
             [['node_count', 'cma_count'], 'integer'],
             [['name', 'adress'], 'string', 'max' => 255],
+            //正则验证
             ['phone', 'match','pattern'=>'/(^(86)\-(0\d{2,3})\-(\d{7,8})\-(\d{1,4})$)|(^0(\d{2,3})\-(\d{7,8})$)|(^0(\d{2,3})\-(\d{7,8})\-(\d{1,4})$)|(^(86)\-(\d{3,4})\-(\d{7,8})$)/','message'=>'电话号码格式不正确'],
+            //自定义验证
+            [['node_count'], 'check_count'],
+
+            // 检查 "level" 是否为 1、2 或 3 中的一个
+            //['level', 'in', 'range' => [1, 2, 3]],
+
+            // 检查 "username" 是否为长度 4 到 24 之间的字符串
+            //['username', 'string', 'length' => [4, 24]],
         ];
+    }
+
+    //自定义验证
+    public function check_count(){
+        if($this->node_count < 0){
+            $this->addError('node_count','node_count不能小于0');
+        }
     }
 
     /**
@@ -48,12 +64,12 @@ class Company extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => '单位名称',
-            'adress' => '地址',
-            'phone' => '联系电话',
-            'node_count' => '节点数',
-            'cma_count' => '摄像头数',
+            'id' => Yii::t('common','Company Id'),
+            'name' => Yii::t('common','Company Name'),  //单位名称
+            'adress' => Yii::t('common','Company Address'),
+            'phone' => Yii::t('common','Company Phone'),
+            'node_count' => Yii::t('common','Company Node Count'),
+            'cma_count' => Yii::t('common','Company Camera Count'),
         ];
     }
 

@@ -10,6 +10,7 @@ use common\models\Admin;
  */
 class LoginForm extends Model
 {
+    //这三个属性是和表单提交的数据一一对应的，这样直接可以通过load（）加载
     public $username;
     public $password;
     public $rememberMe = true;
@@ -23,11 +24,11 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
+            // username 和 password 都是必填项
             [['username', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
+            // 用 validatePassword() 验证 password
             ['password', 'validatePassword'],
         ];
     }
@@ -56,6 +57,7 @@ class LoginForm extends Model
      */
     public function login()
     {
+        //$this->validate() 相当于执行rules（）规则
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {
@@ -75,6 +77,10 @@ class LoginForm extends Model
         }
 
         return $this->_user;
+    }
+
+    protected function afterLogin(){
+        Admin::EVENT_BEFORE_VALIDATE;
     }
 
     public function attributeLabels()

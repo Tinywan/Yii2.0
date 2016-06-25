@@ -13,6 +13,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $verifyCode;
 
     /**
      * @inheritdoc
@@ -33,6 +34,8 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            // verifyCode needs to be entered correctly
+            ['verifyCode', 'captcha','message'=>'验证码不正确！'],
         ];
     }
 

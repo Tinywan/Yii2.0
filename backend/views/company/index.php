@@ -76,6 +76,9 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
                     'nextPageLabel' => '下一页',
                     'prevPageLabel' => '上一页',
                     'lastPageLabel' => '尾页',
+                    //如果你的数据过少，不够2页，默认不显示分页，如果你需要，设置
+                    'hideOnSinglePage' => false,
+                    //'options' => ['class' => 'm-pagination'], //自己写的样式
                 ]);?>
             </div>
         </div>

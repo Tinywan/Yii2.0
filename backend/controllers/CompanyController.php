@@ -53,6 +53,14 @@ class CompanyController extends Controller
         $pages = new Pagination([
             'totalCount' =>$data[ 'count'],
             'pageSize' => $pageSize,
+            //默认带的有每页的数量per-page 如果你不想显示该参数，设置pageSizeParam=false就好
+            'pageSizeParam' => false,
+            //默认的页面取决于参数page,如果你想改变该参数为p,设置pageParam=p就好
+            'pageParam' => 'p',
+            //如果你的分页存在于首页，相信你肯定想要/?p=1而不是/site/index?p=1，我们看看怎么隐藏掉路由
+            'route' => false,
+            //可能你会发现分页类Pagination有一个bug,假如我们只有1页的数据，但是手动更改地址栏的page=20的时候，也会显示page=1的数据？当然，这在大部分接口API中就很让人厌烦。但是，这并非bug,而是一种友好的验证。设置validatePage=false即可避免掉该问题
+            'validatePage' => false,
         ]);
         return $this->render('index',[
             'pages'=>$pages,
@@ -88,8 +96,9 @@ class CompanyController extends Controller
      */
     public function actionCreate()
     {
+        // 新建一条记录
         $model = new Company();
-
+        // 获取用户输入的数据，验证并保存
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->setCompanyRedis();
             return $this->redirect(['index']);

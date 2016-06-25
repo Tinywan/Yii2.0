@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 $this->title = '登录';
 ?>
 
@@ -39,6 +40,7 @@ $form = ActiveForm::begin([
                 'inputTemplate'=>'{input}<button type="submit" class="btn btn-primary green pull-right" name="login-button">登录</button>'
             ])->checkbox() ?>
         </div>
+
 
     </div>
 <?php ActiveForm::end(); ?>

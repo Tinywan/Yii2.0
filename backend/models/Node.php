@@ -106,4 +106,15 @@ class Node extends \yii\db\ActiveRecord
            return $node_arr = [];
        }
     }
+
+    //浏览器输出格式
+    public static function browser_export($type,$filename){
+        if($type=="Excel5"){
+            header('Content-Type: application/vnd.ms-excel');//告诉浏览器将要输出excel03文件
+        }else{
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');//告诉浏览器数据excel07文件
+        }
+        header('Content-Disposition: attachment;filename="'.$filename.'"');//告诉浏览器将输出文件的名称
+        header('Cache-Control: max-age=0');//禁止缓存
+    }
 }

@@ -17,7 +17,6 @@ return [
     'Company Manage'     => '单位管理',
     'Company List'       => '单位列表',
     'Create Company'     => '添加新单位',
-    'Create Company'     => '添加新单位',
     'Company Set'        => '信息设置',
 
     //摄像头
@@ -27,9 +26,23 @@ return [
     //节点
     'Node Times'    => '节点时间段设置',
     'Node' => '添加摄像头',
+    'cma_count' => '摄像头',
 
     //
     'Create Times'  => '添加时间段',
     'Times Manage'  => '时间段设置',
     'Update Times'  => '修改时间段',
+
+    //
+    'Article List'  => '文章列表',
+    'Article Manage'  => '文章管理',
+    'Article Times'  => '修改时间段',
+
+    //Company Model
+    'Company Id' => '单位ID',
+    'Company Name' => '单位名称',
+    'Company Address' => '单位地址',
+    'Company Phone' => '单位电话',
+    'Company Node Count' => '单位节点数',
+    'Company Camera Count' => '单位摄像头数',
 ];

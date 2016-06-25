@@ -34,4 +34,7 @@ class AppAsset extends AssetBundle  //注册外部JS文件
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
+
+    //为使JavaScript文件包含在页面head区域（JavaScript文件默认包含在body的结束处）使用以下选项
+    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 }

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\redactor\widgets\Redactor;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Company */
@@ -24,9 +25,18 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'adress')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'adress')->widget(Redactor::className(), [
+        'clientOptions' => [
+            'imageManagerJson' => ['/redactor/upload/image-json'],
+            'imageUpload' => ['/redactor/upload/image'],
+            'fileUpload' => ['/redactor/upload/file'],
+            'lang' => 'zh_cn',
+            'plugins' => ['clips', 'fontcolor','imagemanager']
+        ]
+    ])?>
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">

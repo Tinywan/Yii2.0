@@ -1,9 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: 1
+ * User: Tinywan
  * Date: 2016/6/19
  * Time: 18:28
+ * 看到没有在这个的article没有s
  */
 
 namespace frontend\modules\articel\controllers;

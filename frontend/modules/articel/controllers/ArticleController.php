@@ -35,6 +35,6 @@ class ArticleController extends ActiveController
 //        // 使用"prepareDataProvider()"方法自定义数据provider
 //        //$actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
 //
-//        return $actions;
+//        return $actions;;
 //    }
 }

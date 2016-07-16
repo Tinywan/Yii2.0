@@ -31,7 +31,7 @@ class IndexController extends Controller
         $container->set('yii\db\Connection', [
             'dsn' => ''
         ]);
-        //解决类与类之间的强依赖关系
+        //使用容器Container解决类与类之间的强依赖关系
         $container->set('backend\controllers\DriverInterface', [
             'class' => 'backend\controllers\ManDriver'
         ]);

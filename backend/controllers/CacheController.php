@@ -12,9 +12,29 @@ use yii\web\Controller;
 
 class CacheController extends Controller
 {
+    /**
+     * 先与方法执行
+     * 定义页面缓存
+     * @return array
+     */
+    public function behaviors(){
+        return [
+            [
+                'class'=>'yii\filters\PageCache', // 定义一个页面缓存
+                'duration' => 600000,
+                'only' => ['index'], //只有index操作才会被缓存
+                'dependency'=>[
+                    'class'=>'yii\caching\FileDependency', // 定义一个文件依赖缓存
+                    'fileName' => 'cache.txt',
+                ]
+
+            ]
+        ];
+    }
+
     public function actionIndex()
     {
-        echo '22222222222222';
+        echo '000000000';
     }
 
     /**
@@ -121,5 +141,14 @@ class CacheController extends Controller
 
         $cache->add('db_keys1230', 'db_keysCacheDependency123', 3000, $dependency);
         var_dump($cache->get('db_keys1230'));
+    }
+
+    /**
+     * 片段缓存
+     */
+    public function actionLocation(){
+
+        // 打开指定的视图页面
+        return $this->renderPartial('index');
     }
 }

@@ -93,10 +93,10 @@ return [
             'suffix' => '',    //如果设置了此项，那么浏览器地址栏就必须带上.html后缀，否则会报404错误
             'rules'=>[
                 '<controller:poor-per-info>/<action:get-area-list>/<pid:\d+>.html'=>'<controller>/<action>',
-                'index' => 'company/index',
-                'create' => 'company/create',
-                'edit' => 'company/edit',
-                'article/index' => 'article/article/index',
+//                'index' => 'company/index',
+//                'create' => 'company/create',
+//                'edit' => 'company/edit',
+//                'article/index' => 'article/article/index',
             ],
         ],
 //        //使用主题

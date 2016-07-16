@@ -20,4 +20,15 @@ class CacheController extends Controller
    public function actionIndex(){
       echo '22222222222222';
    }
+
+    /**
+     * 文件缓存
+     */
+   public function actionDataCache(){
+       // 获取缓存组件
+       $cache = yii::$app->cache;
+
+       // 往缓存中写入数据
+       
+   }
 }

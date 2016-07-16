@@ -38,6 +38,9 @@ return [
             'identityClass' => 'common\models\Admin',
             'enableAutoLogin' => true,
         ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache', //默认是文件缓存
+        ],
         //自定义的一个类哦
         'car' => [
             'class' => 'backend\controllers\Car'

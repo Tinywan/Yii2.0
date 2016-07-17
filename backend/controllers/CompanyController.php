@@ -31,6 +31,32 @@ class CompanyController extends Controller
         ];
     }
 
+    // 缓存一条记录
+    public function actionRedisHtml($id = 0)
+    {
+        if($id){
+            // Model的静态方法，cacheKey()返回一个该Model缓存的一个缓存前缀
+            // eg: $appKeyPrefix.$modelPrefix.$id 使用逻辑删除
+            $key = Company::cacheKey().$id;
+
+            $model = \Yii::$app->cache->get($key);
+            // 如果缓存不存在
+            if($model === false){
+                $model = Company::findOne($id);
+                /**
+                 * set($key, $value, $duration = 0, $dependency = null)
+                 *  添加缓存
+                 */
+                \Yii::$app->cache->set($key,$model);
+            }
+            $model->views++;
+            $model->save();
+            return $this->render('new_detail',[
+                'model'=>$model,
+            ]);
+        }
+    }
+
     /**
      * Lists all Company models.
      * @return mixed
@@ -172,6 +198,20 @@ class CompanyController extends Controller
         //单位信息
         $this->findModel($id)->delCompanyRedis();
         $this->findModel($id)->delete();
+
+        /**
+         * 使用逻辑删除，实际是没有删除的
+         */
+        $model = $this->findModel($id);
+        $model->status = 1;
+        $model->save();
+
+        /**
+         * 删除对应的缓存信息
+         */
+        $key = Company::cacheKey().$id;
+        Yii::$app->cache->delete($key);
+
         return $this->redirect(['index']);
     }
 

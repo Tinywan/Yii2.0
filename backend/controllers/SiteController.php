@@ -29,50 +29,50 @@ class SiteController extends Controller
      * @inheritdoc
      *  过滤器本质上是一类特殊的 行为
      */
-//     public function behaviors()
-//     {
-//         return [
-//             'access' => [
-//                 'class' => AccessControl::className(),
-//                 //允许已认证用户访问create 和 update 动作，拒绝其他用户访问这两个动作。
-//                 //'only' => ['create', 'update'],
-//                 'rules' => [
-//                        // 默认禁止其他用户
-//                     [
-//                         'actions' => ['login', 'error'],
-//                         'allow' => true,
-//                         'roles' => ['?'],
-//                     ],
-//                        // 允许认证用户
-//                     [
-//                         'actions' => ['logout', 'index','upload','password','data','language'],
-//                         'allow' => true,
-//                         'roles' => ['@'],
-//                     ],
-//                 ],
-//             ],
-//             //VerbFilter检查请求动作的HTTP请求方式是否允许执行，如果不允许，会抛出HTTP 405异常。 如下示例，VerbFilter指定CRUD动作所允许的请求方式
-//             'verbs' => [
-//                 'class' => VerbFilter::className(),
-//                 'actions' => [
-//                     'logout' => ['post'],
-//                 ],
-//             ],
-//             //PageCache应用在index动作， 缓存整个页面60秒或post表的记录数发生变化。它也会根据不同应用语言保存不同的页面版本。
-//            //  'pageCache' => [
-//            //     'class' => PageCache::className(),
-//            //     'only' => ['index'],
-//            //     'duration' => 60,
-//            //     'dependency' => [
-//            //         'class' => DbDependency::className(),
-//            //         'sql' => 'SELECT COUNT(*) FROM post',
-//            //     ],
-//            //     'variations' => [
-//            //         \Yii::$app->language,
-//            //     ]
-//            // ],
-//         ];
-//     }
+     public function behaviors()
+     {
+         return [
+             'access' => [
+                 'class' => AccessControl::className(),
+                 //允许已认证用户访问create 和 update 动作，拒绝其他用户访问这两个动作。
+                 //'only' => ['create', 'update'],
+                 'rules' => [
+                        // 默认禁止其他用户
+                     [
+                         'actions' => ['login', 'error'],
+                         'allow' => true,
+                         'roles' => ['?'],
+                     ],
+                        // 允许认证用户
+                     [
+                         'actions' => ['logout', 'index','upload','password','data','language'],
+                         'allow' => true,
+                         'roles' => ['@'],
+                     ],
+                 ],
+             ],
+             //VerbFilter检查请求动作的HTTP请求方式是否允许执行，如果不允许，会抛出HTTP 405异常。 如下示例，VerbFilter指定CRUD动作所允许的请求方式
+             'verbs' => [
+                 'class' => VerbFilter::className(),
+                 'actions' => [
+                     'logout' => ['post'],
+                 ],
+             ],
+             //PageCache应用在index动作， 缓存整个页面60秒或post表的记录数发生变化。它也会根据不同应用语言保存不同的页面版本。
+            //  'pageCache' => [
+            //     'class' => PageCache::className(),
+            //     'only' => ['index'],
+            //     'duration' => 60,
+            //     'dependency' => [
+            //         'class' => DbDependency::className(),
+            //         'sql' => 'SELECT COUNT(*) FROM post',
+            //     ],
+            //     'variations' => [
+            //         \Yii::$app->language,
+            //     ]
+            // ],
+         ];
+     }
 
     /**
      * @inheritdoc
@@ -88,11 +88,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-//        $isGuest = \Yii::$app->user->isGuest;
-//        if(!\Yii::$app->user->isGuest) {
-//            return \Yii::$app->getResponse()->redirect(Url::to('@web/company/index'));
-//        }
-        return $this->render('index');
+        $isGuest = \Yii::$app->user->isGuest;
+        if(!\Yii::$app->user->isGuest) {
+            return \Yii::$app->getResponse()->redirect(Url::to('@web/company/index'));
+        }
+        echo '1111111111';
+        //return $this->render('index');
     }
 
     public function actionLogin()

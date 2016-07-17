@@ -36,7 +36,7 @@ class CompanyController extends Controller
     {
         if($id){
             // Model的静态方法，cacheKey()返回一个该Model缓存的一个缓存前缀
-            // eg: $appKeyPrefix.$modelPrefix.$id 使用逻辑删除
+            // eg: $appKeyPrefix.$modelPrefix.$id 使用逻辑删除1
             $key = Company::cacheKey().$id;
 
             $model = \Yii::$app->cache->get($key);

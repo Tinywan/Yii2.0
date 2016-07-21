@@ -77,7 +77,7 @@ return [
         ],
         // 指定错误页面的输出的视图
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'company/error',
         ],
         //添加语言包配置
         'i18n' => [

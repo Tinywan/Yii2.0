@@ -32,6 +32,18 @@ class CompanyController extends Controller
     }
 
     /**
+     * 在这里只要指定这个类就可以了 'class' => 'yii\web\ErrorAction',
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
+    /**
      * Lists all Company models.
      * @return mixed
      */
@@ -235,4 +247,5 @@ class CompanyController extends Controller
             ->send();
         $sms = Yii::$app->smser->send('13669361192','000000');
     }
+
 }

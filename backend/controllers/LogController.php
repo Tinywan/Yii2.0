@@ -3,8 +3,8 @@
 namespace backend\controllers;
 
 use Yii;
-//use yii\web\Controller;
-use yii\rest\Controller;
+use yii\base\ErrorException;
+use yii\web\Controller;
 use backend\models\Student;
 
 /**
@@ -13,6 +13,15 @@ use backend\models\Student;
 class LogController extends Controller
 {
    public function actionIndex(){
-        Yii::trace('start calculating average revenue');
+       Yii::trace('start calculating average revenue',__METHOD__);
+       try{
+            10/0;
+       }catch (ErrorException $e){
+           Yii::warning('Tried divding by zero');
+       }
    }
+
+    public function actionErrorPage(){
+
+    }
 }

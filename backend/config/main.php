@@ -75,6 +75,7 @@ return [
             'key' => '85fd6d7ab14c55784df0',
             'fileMode' => false
         ],
+        // 指定错误页面的文件
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

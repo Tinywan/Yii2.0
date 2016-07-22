@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 use yii\bootstrap\Carousel;
+use yii\bootstrap\Tabs;
 $this->title = '视频管理主界面';
 $this->params['breadcrumbs'][] = ['label'=>'站点信息','url'=>'site/index'];
 $this->params['breadcrumbs'][] = $this->title;
@@ -35,5 +36,43 @@ $this->params['breadcrumbs'][] = $this->title;
             //'options' => [...],       //配置对应的样式
         ],
     ]
+]);
+?>
+
+<?php
+/**
+ * yii2-bootstrap扩展之tab切换
+ */
+echo Tabs::widget([
+    'items' => [
+        [
+            'label' => 'One',
+            'content' => 'Anim pariatur cliche...',
+            'active' => true
+        ],
+        [
+            'label' => 'Two',
+            'content' => 'Anim pariatur cliche...',
+            'headerOptions' => ['....'],
+             'options' => ['id' => 'myveryownID'],
+      ],
+      [
+          'label' =>'Example',
+          'url' => 'http://www.example.com',
+      ],
+      [
+          'label' => 'Dropdown',
+          'items' => [
+              [
+                  'label' => 'DropdownA',
+                  'content' => 'DropdownA, Anim pariatur cliche...',
+              ],
+              [
+                  'label' => 'DropdownB',
+                  'content' => 'DropdownB, Anim pariatur cliche...',
+              ],
+          ],
+      ],
+  ],
 ]);
 ?>

@@ -167,7 +167,7 @@ AppAsset::register($this); //注册资源包
                     <ul class="nav nav-sidebar">
                         <li><a href="<?=Url::to(['/site/index'])?>"><i class="fa fa-laptop"></i><span class="text"> 后台首页</span></a></li>
                         <li>
-                            <a href="#"><i class="fa fa-file-text"></i><span class="text"> 单位管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-file-text"></i><span class="text"> 后台管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
                                 <li><a href="<?=Url::to(['/company/index'])?>"><i class="fa fa-car"></i><span class="text"> 单位管理</span></a>
 
@@ -184,7 +184,14 @@ AppAsset::register($this); //注册资源包
                                 <li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-视频管理</span></a></li>
                             </ul>
                         </li>
-                        <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-table"></i><span class="text">文件上传</span></a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-file-text"></i><span class="text"> 文件管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <ul class="nav sub">
+                                <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-random"></i><span class="text"> 文件上传</span></a></li>
+                                <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-retweet"></i><span class="text"> 文件界定</span></a></li>
+                                <li><a href="chart-other.html"><i class="fa fa-bar-chart-o"></i><span class="text"> 节点管理</span></a></li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-signal"></i><span class="text"> PhpExcel</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">

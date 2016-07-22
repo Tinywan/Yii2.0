@@ -36,6 +36,7 @@ return [
         'user' => [
             //User用户组件下的identity属性即是User认证类
             'identityClass' => 'common\models\Admin',
+            //只有在enableAutoLogin为true的情况下，如果选择了下次自动登录，那么就会把用户信息存储起来放到cookie中并设置cookie的有效期为3600*24*30秒，以用于下次登录
             'enableAutoLogin' => true,
         ],
         'cache' => [

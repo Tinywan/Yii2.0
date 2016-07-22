@@ -15,6 +15,14 @@ class ExtendsController extends Controller
 {
     public function actionIndex(){
        echo 'ExtendsController';
+        // 获取登陆用户自己的ID信息
+        $logUserId = Yii::$app->user->getId();
+        // 判断是否是游客
+        $logIsGuest = Yii::$app->user->getIsGuest();
+        //返回标识对象与当前登录的用户
+        $getIdentity = Yii::$app->user->getIdentity();
+        $loginRequired = Yii::$app->user->loginRequired();
+        var_dump($getIdentity);
     }
 
     /**

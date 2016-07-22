@@ -45,7 +45,7 @@ class SiteController extends Controller
                      ],
                         // 允许认证用户
                      [
-                         'actions' => ['logout', 'index','upload','password','data','language'],
+                         'actions' => ['logout', 'index','upload','password','data','language','test'],
                          'allow' => true,
                          'roles' => ['@'],
                      ],
@@ -216,5 +216,10 @@ class SiteController extends Controller
             setcookie('lang',$_REQUEST['lang'],time()+3600*24*7,'/');
         }
         $this->redirect(['company/index']);
+    }
+
+    public function actionTest(){
+        $loginRequired = Yii::$app->user->loginRequired();
+        var_dump($loginRequired);
     }
 }

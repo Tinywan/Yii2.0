@@ -151,4 +151,6 @@ class CacheController extends Controller
         // 打开指定的视图页面
         return $this->renderPartial('index');
     }
+
+    
 }

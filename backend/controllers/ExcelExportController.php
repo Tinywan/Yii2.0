@@ -14,7 +14,7 @@ use PHPExcel;
 use PHPExcel_Reader_Excel2007;
 use PHPExcel_Writer_Excel2007;
 
-class PhpExcelController  extends Controller{
+class ExcelExportController  extends Controller{
 
     public function actionRead(){
 

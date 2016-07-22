@@ -48,11 +48,22 @@ return [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                [
+                'file' => [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                'email' => [
+                    'class' => 'yii\log\EmailTarget',
+                    'levels' => ['error'],
+                    'categories' => ['yii\db\*'],
+                    'message' => [
+                        'from' => ['log@example.com'],
+                        'to' => ['admin@example.com', 'developer@example.com'],
+                        'subject' => 'Database errors at example.com',
+                    ],
+                ],
             ],
+
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -64,6 +75,7 @@ return [
             'key' => '85fd6d7ab14c55784df0',
             'fileMode' => false
         ],
+        // 指定错误页面的输出的视图
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

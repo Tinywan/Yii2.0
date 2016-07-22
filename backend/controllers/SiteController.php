@@ -52,12 +52,12 @@ class SiteController extends Controller
                  ],
              ],
              //VerbFilter检查请求动作的HTTP请求方式是否允许执行，如果不允许，会抛出HTTP 405异常。 如下示例，VerbFilter指定CRUD动作所允许的请求方式
-             'verbs' => [
-                 'class' => VerbFilter::className(),
-                 'actions' => [
-                     'logout' => ['post'],
-                 ],
-             ],
+//             'verbs' => [
+//                 'class' => VerbFilter::className(),
+//                 'actions' => [
+//                     'logout' => ['post'],
+//                 ],
+//             ],
              //PageCache应用在index动作， 缓存整个页面60秒或post表的记录数发生变化。它也会根据不同应用语言保存不同的页面版本。
             //  'pageCache' => [
             //     'class' => PageCache::className(),
@@ -88,12 +88,11 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $isGuest = \Yii::$app->user->isGuest;
-        if(!\Yii::$app->user->isGuest) {
-            return \Yii::$app->getResponse()->redirect(Url::to('@web/company/index'));
-        }
-        echo '1111111111';
-        //return $this->render('index');
+//        $isGuest = \Yii::$app->user->isGuest;
+//        if(!\Yii::$app->user->isGuest) {
+//            return \Yii::$app->getResponse()->redirect(Url::to('@web/company/index'));
+//        }
+        return $this->render('index');
     }
 
     public function actionLogin()

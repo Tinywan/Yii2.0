@@ -99,6 +99,16 @@ return [
                 ],
             ],
         ],
+
+        'assetManager' => [
+            'class' => 'yii\web\AssetManager',
+            'bundles' => [
+                'daixianceng\echarts\EChartsAsset' => [
+                    'sourcePath' => null,
+                    'baseUrl' => '//cdn.bootcss.com/echarts/3.0.0'
+                ]
+            ],
+        ],
         //URl
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -125,4 +135,5 @@ return [
 
     ],
     'params' => $params,
+
 ];

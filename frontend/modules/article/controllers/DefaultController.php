@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\articel\controllers;
+namespace frontend\modules\article\controllers;
 
 use yii\web\Controller;
 

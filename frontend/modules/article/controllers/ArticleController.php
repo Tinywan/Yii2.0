@@ -7,7 +7,7 @@
  * 看到没有在这个的article没有s
  */
 
-namespace frontend\modules\articel\controllers;
+namespace frontend\modules\article\controllers;
 
 use yii\rest\ActiveController;
 use yii\web\Response;
@@ -21,7 +21,7 @@ class ArticleController extends ActiveController
         $behaviors = parent::behaviors();
 
         //RESTful APIs 同时支持JSON和XML格式
-        $behaviors['contentNegotiator']['formats']['text/html'] = Response::FORMAT_JSON;
+        $behaviors['contentNegotiator']['formats']['text/html'] = Response::FORMAT_XML;
 
         return $behaviors;
     }

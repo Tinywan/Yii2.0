@@ -17,8 +17,8 @@ return [
         'user' => [
             'class' => 'frontend\modules\user\Module',
         ],
-        'articel' => [
-            'class' => 'frontend\modules\articel\Module',
+        'article' => [
+            'class' => 'frontend\modules\article\Module',
         ],
     ],
     'components' => [

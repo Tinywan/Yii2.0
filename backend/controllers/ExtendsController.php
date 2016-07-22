@@ -31,4 +31,13 @@ class ExtendsController extends Controller
     public function actionCarousel(){
         return $this->render('carousel');
     }
+
+    /**
+     *
+     * @return string
+     */
+    public function actionEcharts(){
+        return $this->render('echarts');
+    }
+
 }

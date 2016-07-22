@@ -204,7 +204,7 @@ AppAsset::register($this); //注册资源包
                             <a href="#"><i class="fa fa-briefcase"></i><span class="text"> 扩展管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
                                 <li><a href="<?=Url::to(['/extends/carousel'])?>"><i class="fa fa-align-left"></i><span class="text"> 图片轮播组件</span></a></li>
-                                <li><a href="ui-nestable-list.html"><i class="fa fa-outdent"></i><span class="text"> 用户管理</span></a></li>
+                                <li><a href="<?=Url::to(['/extends/echarts'])?>"><i class="fa fa-outdent"></i><span class="text"> ECharts管理</span></a></li>
                                 <li><a href="ui-elements.html"><i class="fa fa-list"></i><span class="text"> 用户管理</span></a></li>
                                 <li><a href="ui-panels.html"><i class="fa fa-list-alt"></i><span class="text"> 用户管理</span></a></li>
                                 <li><a href="ui-buttons.html"><i class="fa fa-th"></i><span class="text"> 用户管理</span></a></li>

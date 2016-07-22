@@ -1,10 +1,10 @@
 <?php
 
-namespace frontend\modules\articel;
+namespace frontend\modules\article;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'frontend\modules\articel\controllers';
+    public $controllerNamespace = 'frontend\modules\article\controllers';
 
     public function init()
     {

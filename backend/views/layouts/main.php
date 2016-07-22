@@ -176,12 +176,12 @@ AppAsset::register($this); //注册资源包
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 文章管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 模块管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
-                                <li><a href="<?=Url::to('@web/article/article/index')?>"><i class="fa fa-indent"></i><span class="text"> 文章管理</span></a></li>
-                                <li><a href="form-wizard.html"><i class="fa fa-tags"></i><span class="text"> 摄像头管理</span></a></li>
+                                <li><a href="<?=Url::to('@web/article/article/index')?>"><i class="fa fa-indent"></i><span class="text"> 文章模块</span></a></li>
+                                <li><a href="form-wizard.html"><i class="fa fa-tags"></i><span class="text"> 流媒体管理</span></a></li>
                                 <li><a href="form-dropzone.html"><i class="fa fa-plus-square-o"></i><span class="text"> 摄像头管理</span></a></li>
-                                <li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-摄像头管理</span></a></li>
+                                <li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-视频管理</span></a></li>
                             </ul>
                         </li>
                         <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-table"></i><span class="text">文件上传</span></a></li>

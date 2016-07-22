@@ -22,11 +22,19 @@ return [
         ],
     ],
     'components' => [
+        // 默认可以使用session用户的登陆信息
+//        'user' => [
+//            'identityClass' => 'common\models\User',
+//            'enableAutoLogin' => true,
+//            'enableSession' => false,
+////            'enableSession' => true,
+////            'loginUrl' => null,
+//        ],
+        // 接口APi的用户认证信息i
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'frontend\models\User',
             'enableAutoLogin' => true,
-//            'enableSession' => true,
-//            'loginUrl' => null,
+            'enableSession' => false,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

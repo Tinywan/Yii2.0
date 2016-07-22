@@ -9,20 +9,46 @@
 
 namespace frontend\modules\article\controllers;
 
+use yii\helpers\ArrayHelper;
 use yii\rest\ActiveController;
 use yii\web\Response;
+use yii\filters\ContentNegotiator;
+use yii\filters\auth\HttpBasicAuth;
+use yii\filters\auth\HttpBearerAuth;
+use yii\filters\auth\QueryParamAuth;
+use yii\filters\auth\CompositeAuth;
 
 class ArticleController extends ActiveController
 {
     public $modelClass = 'frontend\models\Article';
+
+    //数据序列化
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {
         $behaviors = parent::behaviors();
 
         //RESTful APIs 同时支持JSON和XML格式
-        $behaviors['contentNegotiator']['formats']['text/html'] = Response::FORMAT_XML;
+        $behaviors['contentNegotiator'] = [
+            'class' => ContentNegotiator::className(),
+            'formats' => [
+                'application/json' => Response::FORMAT_JSON,
+                // 'application/xml' => Response::FORMAT_XML,
+            ],
+        ];
 
+//        $behaviors['authenticator'] = [
+//            'class' => CompositeAuth::className(),
+//            'authMethods' => [
+//                HttpBasicAuth::className(),
+//                HttpBearerAuth::className(),
+//                QueryParamAuth::className(),
+//            ],
+//        ];
         return $behaviors;
     }
 
@@ -38,4 +64,11 @@ class ArticleController extends ActiveController
 //
 //        return $actions;;
 //    }
+
+     //执行访问检查
+     public function checkAccess($action, $model = null, $params = [])
+     {
+         // 检查用户能否访问 $action 和 $model
+         // 访问被拒绝应抛出ForbiddenHttpException
+     }
 }

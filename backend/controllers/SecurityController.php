@@ -32,4 +32,11 @@ class SecurityController extends Controller
         }
 
     }
+
+    /**
+     * Sql 注入
+     */
+    public function actionSql(){
+
+    }
 }

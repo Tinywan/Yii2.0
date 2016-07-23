@@ -34,9 +34,16 @@ class SecurityController extends Controller
     }
 
     /**
-     * Sql 注入
+     * Sql 注入 YII的方法注入
+     * PDO:占位符
      */
     public function actionSql(){
-
+        // 新建一个查询生成器
+        $users =(new \yii\db\Query())
+            ->select('*')
+            ->from('tv_company')
+            ->where('name = :name',[':name'=>'阿麦科技'])
+            ->one();
+        print_r($users);
     }
 }

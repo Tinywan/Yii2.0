@@ -26,6 +26,17 @@ class Company extends BaseModel
     }
 
     /**
+     * 返回一个该model的缓存文件的前缀
+     * @return string
+     * @static
+     * $appKeyPrefix.$modelPrefix.$id
+     */
+    public static function cacheKey()
+    {
+        return 'company_cache:';
+    }
+
+    /**
      * @inheritdoc
      */
     public function rules()

@@ -167,7 +167,7 @@ AppAsset::register($this); //注册资源包
                     <ul class="nav nav-sidebar">
                         <li><a href="<?=Url::to(['/site/index'])?>"><i class="fa fa-laptop"></i><span class="text"> 后台首页</span></a></li>
                         <li>
-                            <a href="#"><i class="fa fa-file-text"></i><span class="text"> 单位管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-file-text"></i><span class="text"> 后台管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
                                 <li><a href="<?=Url::to(['/company/index'])?>"><i class="fa fa-car"></i><span class="text"> 单位管理</span></a>
 
@@ -176,15 +176,22 @@ AppAsset::register($this); //注册资源包
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 文章管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-list-alt"></i><span class="text"> 模块管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
-                                <li><a href="<?=Url::to('@web/article/article/index')?>"><i class="fa fa-indent"></i><span class="text"> 文章管理</span></a></li>
-                                <li><a href="form-wizard.html"><i class="fa fa-tags"></i><span class="text"> 摄像头管理</span></a></li>
+                                <li><a href="<?=Url::to('@web/article/article/index')?>"><i class="fa fa-indent"></i><span class="text"> 文章模块</span></a></li>
+                                <li><a href="form-wizard.html"><i class="fa fa-tags"></i><span class="text"> 流媒体管理</span></a></li>
                                 <li><a href="form-dropzone.html"><i class="fa fa-plus-square-o"></i><span class="text"> 摄像头管理</span></a></li>
-                                <li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-摄像头管理</span></a></li>
+                                <li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-视频管理</span></a></li>
                             </ul>
                         </li>
-                        <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-table"></i><span class="text">文件上传</span></a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-file-text"></i><span class="text"> 文件管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <ul class="nav sub">
+                                <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-random"></i><span class="text"> 文件上传</span></a></li>
+                                <li><a href="<?=Url::to(['/site/upload'])?>"><i class="fa fa-retweet"></i><span class="text"> 文件界定</span></a></li>
+                                <li><a href="chart-other.html"><i class="fa fa-bar-chart-o"></i><span class="text"> 节点管理</span></a></li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-signal"></i><span class="text"> PhpExcel</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
@@ -194,10 +201,10 @@ AppAsset::register($this); //注册资源包
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-briefcase"></i><span class="text"> 用户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+                            <a href="#"><i class="fa fa-briefcase"></i><span class="text"> 扩展管理</span> <span class="fa fa-angle-down pull-right"></span></a>
                             <ul class="nav sub">
-                                <li><a href="ui-sliders-progress.html"><i class="fa fa-align-left"></i><span class="text"> 用户管理</span></a></li>
-                                <li><a href="ui-nestable-list.html"><i class="fa fa-outdent"></i><span class="text"> 用户管理</span></a></li>
+                                <li><a href="<?=Url::to(['/extends/carousel'])?>"><i class="fa fa-align-left"></i><span class="text"> 图片轮播组件</span></a></li>
+                                <li><a href="<?=Url::to(['/extends/echarts'])?>"><i class="fa fa-outdent"></i><span class="text"> ECharts管理</span></a></li>
                                 <li><a href="ui-elements.html"><i class="fa fa-list"></i><span class="text"> 用户管理</span></a></li>
                                 <li><a href="ui-panels.html"><i class="fa fa-list-alt"></i><span class="text"> 用户管理</span></a></li>
                                 <li><a href="ui-buttons.html"><i class="fa fa-th"></i><span class="text"> 用户管理</span></a></li>

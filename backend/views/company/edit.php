@@ -170,3 +170,6 @@ $this->registerCssFile('@web/statics/css/add-ons.min.css',['depends'=>['backend\
 
 
 </div>
+<script>
+    console.table(array('1','4','6'));
+</script>

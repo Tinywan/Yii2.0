@@ -19,11 +19,10 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-redis": "^2.0",
-        "phpoffice/phpexcel": "dev-develop",
-        "yiisoft/yii2-imagine": "^2.0",
-        "kartik-v/yii2-widget-datetimepicker": "*",
-        "daixianceng/yii2-echarts": "*",
-        "yiidoc/yii2-redactor": "*"
+        "daixianceng/yii2-smser": "*",
+        "yiisoft/yii2-mongodb": "^2.0",
+        "yiisoft/yii2-jui": "*",
+        "daixianceng/yii2-echarts": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

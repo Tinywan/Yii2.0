@@ -46,4 +46,11 @@ class SecurityController extends Controller
             ->one();
         print_r($users);
     }
+
+    /**
+     * 文件上传漏洞
+     */
+    public function actionUpload(){
+
+    }
 }

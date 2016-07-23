@@ -22,7 +22,8 @@
         "daixianceng/yii2-smser": "*",
         "yiisoft/yii2-mongodb": "^2.0",
         "yiisoft/yii2-jui": "*",
-        "daixianceng/yii2-echarts": "*"
+        "daixianceng/yii2-echarts": "*",
+        "2amigos/yii2-date-time-picker-widget": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

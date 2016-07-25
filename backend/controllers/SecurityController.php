@@ -53,4 +53,23 @@ class SecurityController extends Controller
     public function actionUpload(){
 
     }
+
+    /**
+     * PHP输入流php://input的使用分析
+     */
+    public function actionInput()
+    {
+        if(Yii::$app->request->isPost){
+            $content = file_get_contents('php://input');
+            echo $content;
+            die;
+        }else{
+            $csrfToken = Yii::$app->request->csrfToken;
+            $r = print('0000000000').'<br/>';
+            echo $r;
+            die;
+            return $this->renderPartial('input',['csrfToken'=>$csrfToken]);
+        }
+
+    }
 }

@@ -5,6 +5,8 @@ use yii\web\JsExpression;
 use daixianceng\echarts\ECharts;
 use yii\bootstrap\Modal;
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 $this->title = '视频管理主界面';
 $this->params['breadcrumbs'][] = ['label'=>'站点信息','url'=>'site/index'];
 $this->params['breadcrumbs'][] = $this->title;
@@ -109,3 +111,4 @@ Modal::end();
     'data-target' => '#page-modal'    //此处对应Modal组件中设置的id
 ])
 ?>
+

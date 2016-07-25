@@ -6,6 +6,7 @@ use Yii;
 use yii\base\ErrorException;
 use yii\web\Controller;
 use backend\models\Student;
+use yii\log\FileTarget;
 
 /**
  * Yii日志学习
@@ -19,6 +20,18 @@ class LogController extends Controller
        }catch (ErrorException $e){
            Yii::warning('Tried divding by zero');
        }
+   }
+
+    /**
+     * Yii2.0自定义日志文件写日志
+     * @throws \yii\base\InvalidConfigException
+     */
+   public function actionLog(){
+       $time = microtime(true);
+       $log = new FileTarget();
+       $log->logFile = Yii::$app->getRuntimePath().'/logs/test.log';
+       $log->messages[] = ['test',1,'appliaction',$time];
+       $log->export();
    }
 
 }

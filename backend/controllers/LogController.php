@@ -29,8 +29,9 @@ class LogController extends Controller
    public function actionLog(){
        $time = microtime(true);
        $log = new FileTarget();
+
        $log->logFile = Yii::$app->getRuntimePath().'/logs/test.log';
-       $log->messages[] = ['test',1,'appliaction',$time];
+       $log->messages[] = ['test213213',1,'appliaction321321',$time];
        $log->export();
    }
 

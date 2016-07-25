@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 use yii\web\JsExpression;
 use daixianceng\echarts\ECharts;
+use yii\bootstrap\Modal;
+use yii\helpers\Html;
 $this->title = '视频管理主界面';
 $this->params['breadcrumbs'][] = ['label'=>'站点信息','url'=>'site/index'];
 $this->params['breadcrumbs'][] = $this->title;
@@ -88,4 +90,22 @@ $this->params['breadcrumbs'][] = $this->title;
 ]);
 ?>
 
-0000000000000
+<hr/>111
+<?php
+Modal::begin([
+    'id' => 'page-modal',
+    'header' => "<h5>这里是标题</h5>",
+    'toggleButton' => ['label' => 'click me'],
+]);
+
+echo '这里是模态内容...';
+
+Modal::end();
+?>
+
+<?= Html::a('点击按钮', '#', [
+    'class' => 'btn btn-success',
+    'data-toggle' => 'modal',
+    'data-target' => '#page-modal'    //此处对应Modal组件中设置的id
+])
+?>

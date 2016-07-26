@@ -9,6 +9,6 @@ class IndexController extends Controller
     public function actionIndex()
     {
         //return $this->render('index');
-        echo '00000000000000'.__METHOD__;
+        echo 'backend\modules\article\controllers============'.__METHOD__;
     }
 }

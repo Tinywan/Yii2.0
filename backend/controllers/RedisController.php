@@ -24,4 +24,8 @@ class RedisController extends Controller
        var_dump($result);
        //$student = Student::find()->active()->all();
    }
+
+    public function actionModule(){
+
+    }
 }

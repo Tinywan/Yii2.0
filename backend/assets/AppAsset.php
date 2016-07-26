@@ -30,6 +30,7 @@ class AppAsset extends AssetBundle  //注册外部JS文件
         'statics/js/core.min.js',
         'statics/js/index.js',
     ];
+    //依赖其他两个包 yii\web\YiiAsset 和 yii\bootstrap\BootstrapAsset
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',

@@ -66,9 +66,7 @@ class SecurityController extends Controller
         }else{
             $csrfToken = Yii::$app->request->csrfToken;
             $r = print('0000000000').'<br/>';
-            echo $r;
-            die;
-            return $this->renderPartial('input',['csrfToken'=>$csrfToken]);
+            return $this->render('input',['csrfToken'=>$csrfToken]);
         }
 
     }

@@ -61,4 +61,17 @@ class Article extends \yii\db\ActiveRecord
             'remind' => 'Remind',
         ];
     }
+
+//    public function fields(){
+//        return [
+//            // 字段名和属性名相同
+//            'id',
+//            // 字段名为"email", 对应的属性名为"email_address"
+//            'uid' => 'user_id',
+//            // 字段名为"name", 值由一个PHP回调函数定义
+//            'addtime' => function ($model) {
+//                return $model->addtime . ' ' . $model->addtime;
+//            },
+//        ];
+//    }
 }

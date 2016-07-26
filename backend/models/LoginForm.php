@@ -34,6 +34,7 @@ class LoginForm extends Model
     }
 
     /**
+     * 当一个用户尝试登录时，表单提交的密码需要使用之前的存储的哈希串来验证：
      * Validates the password.
      * This method serves as the inline validation for password.
      *

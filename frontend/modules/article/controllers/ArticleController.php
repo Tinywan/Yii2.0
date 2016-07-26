@@ -36,7 +36,7 @@ class ArticleController extends ActiveController
         $behaviors['contentNegotiator'] = [
             'class' => ContentNegotiator::className(),
             'formats' => [
-                'application/json' => Response::FORMAT_JSON,
+                'application/json' => Response::FORMAT_XML,
                 // 'application/xml' => Response::FORMAT_XML,
             ],
         ];
@@ -71,4 +71,15 @@ class ArticleController extends ActiveController
          // 检查用户能否访问 $action 和 $model
          // 访问被拒绝应抛出ForbiddenHttpException
      }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+
+        // 删除一些包含敏感信息的字段
+        unset($fields['uid'], $fields['content'], $fields['password_reset_token']);
+
+        return $fields;
+    }
+
 }

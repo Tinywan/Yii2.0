@@ -16,7 +16,7 @@ return [
     //模块配置
     'modules' => [
         'article' => [
-            'class' => 'backend\modules\article\Article',
+            'class' => 'backend\modules\article\Module',
         ],
         'wechat' => [
             'class' => 'backend\modules\wechat\weChat',

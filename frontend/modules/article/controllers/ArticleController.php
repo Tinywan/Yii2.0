@@ -82,4 +82,11 @@ class ArticleController extends ActiveController
         return $fields;
     }
 
+    public function actionIndex()
+    {
+        echo 'actionIndex';
+    }
+
+
+
 }

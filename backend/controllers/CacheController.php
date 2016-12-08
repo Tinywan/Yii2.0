@@ -58,7 +58,7 @@ class CacheController extends Controller
         // 删除数据,
         $cache->delete('name');
 
-        // 清空数据
+        // 清空数据定义页面缓存
         $cache->flush();
 
         // 取出缓存数据，如果被删除掉的话，则会返回布尔值 false
